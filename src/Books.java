@@ -3,12 +3,12 @@ public class Books {
     static int serial=1001;
     //To give id to the books
     String bookName,authorName,publisher;
-    Books(String bookName,String authorName,String publisher,int bookQuantity) {
+    Books(String bookName,String authorName,String publisher) {
         //to add initial books
         bookID=serial++;
         this.bookName=bookName;
         this.authorName=authorName;
-        this.bookQuantity=bookQuantity;
+        this.bookQuantity= 5;
         this.publisher=publisher;
     }
     Books() {
@@ -17,6 +17,7 @@ public class Books {
     void addBook() {
         //To add book entered by the librarian
         bookID=serial++;
+        Library.scan.nextLine();
         System.out.print("Enter Book Name : ");
         bookName=Library.scan.nextLine();
         System.out.print("Enter Author Name : ");
@@ -50,10 +51,11 @@ public class Books {
         int space=39-bookName.length();
         if(space<0){
             System.out.print("     ");
-        }
-        else {
-            for (int i = 0; i < space; i++) {
+        } else {
+            int i = 0;
+            while (i < space) {
                 System.out.print(" ");
+                i++;
             }
         }
     }
@@ -61,10 +63,11 @@ public class Books {
         int space=25-authorName.length();
         if(space<0){
             System.out.print("     ");
-        }
-        else {
-            for (int i = 0; i < space; i++) {
+        } else {
+            int i = 0;
+            while (i < space) {
                 System.out.print(" ");
+                i++;
             }
         }
     }
@@ -72,10 +75,11 @@ public class Books {
         int space=25-publisher.length();
         if(space<0){
             System.out.print("     ");
-        }
-        else {
-            for (int i = 0; i < space; i++) {
+        } else {
+            int i = 0;
+            while (i < space) {
                 System.out.print(" ");
+                i++;
             }
         }
     }
